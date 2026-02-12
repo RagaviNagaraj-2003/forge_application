@@ -1,0 +1,22 @@
+modules:
+  jira:adminPage:
+    - key: forge-app-3-hello-world-admin-page
+      resource: main
+      resolver:
+        function: resolver
+      title: forge-app-3
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/e9d53706-4c60-4f80-b7cc-448d4666a1a1
+permissions:
+  scopes:
+    - storage:app
